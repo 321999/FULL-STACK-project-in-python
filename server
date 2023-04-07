@@ -1,0 +1,52 @@
+from ._anvil_designer import Form1Template
+from anvil import *
+import anvil.server
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+
+class Form1(Form1Template):
+  def __init__(self, **properties):
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
+
+
+
+
+  
+  def submit_button_click(self, **event_args):
+    # alert("U CLICKED SUBMIT BUTTON")
+    name=self.name_box.text
+    email=self.email_box.text
+    feedback=self.feedback.text
+
+    anvil.server.call("feedback_form",name,email,feedback),
+    Notification("form submiteed").show()
+    self.clear_input()
+
+  def clear_input(self):
+   self.name_box.text=""
+   self.email_box.text=""
+   self.feedback.text=""
+
+  def button2_click(self, **event_args):
+    user_ka_naam=self.name_box.text,
+    user_ka_email=self.email_box.text,
+    user_feedback=self.feedback.text
+
+    anvil.server.call("feedback_form1",user_ka_naam,user_ka_email,user_feedback)
+    
+    
+    alert("click on the previous page")
+    self.clear_input()
+    """This method is called when the button is clicked"""
+    # pass
+
+  def clear_input(self):
+   self.name_box.text=""
+   self.email_box.text=""
+   self.feedback.text=""
+
+
+
+
