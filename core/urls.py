@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from home.views import *
 urlpatterns = [
+    path("sucess/",sucess,name="sucess"),
     path("ki/raam/h",helo,name="helo"),
     path("",helo,name="helo"),
 
