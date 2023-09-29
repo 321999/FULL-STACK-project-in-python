@@ -14,3 +14,6 @@ how to start with the html response in django that  we know it should be done in
 how to return the data from backend 
   
 
+there are two types of view one is class based and another one function based view 
+
+
