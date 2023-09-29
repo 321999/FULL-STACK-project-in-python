@@ -17,7 +17,7 @@ def samaan(request):
         {"NAME":"KISHRE","AGE":23},
         {"NAME":"KIE","AGE":23},
         {"NAME":"ISHRE","AGE":23},
-        {"NAME":"KIS","AGE":23},
+        {"NAME":"KIS","AGE":16},
         {"NAME":"KISH","AGE":23},
         {"NAME":"KI","AGE":23},
 
