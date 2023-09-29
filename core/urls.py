@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from home.views import *
 urlpatterns = [
+    path("ki/raam/h",helo,name="helo"),
+    path("",helo,name="helo"),
+
     path('admin/', admin.site.urls),
 ]
+
+
+# init file is used to delete the file 
+# admin file is used to modify the model 
+# models.py is used to interact with t eh database 
+# to check the fuctionality in the we use test.py 
+# views.py all the logical part is writtian inside this 
+# in any website login register page is called the functionality to pack this functinality in some module called app 
+# project ke module ko divide krte hin us cheez ko app kehte hin  
