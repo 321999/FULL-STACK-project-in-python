@@ -10,6 +10,31 @@
 <body>
     <h1>data from the backend is </h1>
     <strong>{{loyal}}</strong>
+    <section>
+        <table border="1">
+            <tr>
+                <!-- <td></td> -->
+                <th>srno</th>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+            {%for p in loyal%}
+            <tr>
+                <!-- <td></td> -->
+                <!-- <td>1</td> instead of doing this we can dynamically couner the value -->
+                <td>{{forloop.counter}}</td>
+                <!-- for loop counter is used to dynamically change the value -->
+                <td>{{p.NAME}}</td>
+                <!-- <td>3</td> -->
+                <!-- <td>{{p.age}}</td>
+                 -->
+                <td>{{p.AGE}}</td>
+
+
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
     <section class="product">
         <div class="product-image">
             <img src="product-image.jpg" alt="Product Image">
@@ -21,6 +46,7 @@
             <button class="buy-button">Buy Now</button>
         </div>
     </section>
+
 
     <!-- <script>
         console.log("hello welcome")
