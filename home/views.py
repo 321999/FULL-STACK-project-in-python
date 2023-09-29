@@ -9,9 +9,11 @@ def sucess(request):
     return HttpResponse("<h1>perseverence and being with the technology is the key to success</h1>")
 def blog(request):
     print("blog page is creating")
-    return render(request,"index.html")
+    # similarly like homewe can have  product  ka page,user ka page and  aa sakta hi 
+    return render(request,"home/index.html")
 
-
+def samaan(request):
+    return render(request,"product/index.html")
 
 
 
@@ -22,7 +24,7 @@ def blog(request):
 #                         <nav>
 #                         <ul>
 #                         <li>home</li>
-#                         <li>serach</li>
+#                         <li>search</li>
 #                         <li>location</li>
 #                         <li>city</li>
 

@@ -16,4 +16,7 @@ how to return the data from backend
 
 there are two types of view one is class based and another one function based view 
 
+frontend file that is html file should be inside the templates 
+- check the spelling of templates and put all ur frontend file insde this 
 
+js file should be  writtain with the html file 

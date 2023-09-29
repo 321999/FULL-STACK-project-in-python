@@ -22,8 +22,8 @@ urlpatterns = [
     path("ki/raam/h",helo,name="helo"),
     path("blog/",blog,name="blog"),
     path("",helo,name="helo"),
-
     path('admin/', admin.site.urls),
+    path("product/",samaan,name="samaan")
 ]
 
 
