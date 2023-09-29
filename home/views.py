@@ -13,7 +13,16 @@ def blog(request):
     return render(request,"home/index.html")
 
 def samaan(request):
-    return render(request,"product/index.html")
+    loyal=[
+        {"NAME":"KISHRE","AGE":23},
+        {"NAME":"KIE","AGE":23},
+        {"NAME":"ISHRE","AGE":23},
+        {"NAME":"KIS","AGE":23},
+        {"NAME":"KISH","AGE":23},
+        {"NAME":"KI","AGE":23},
+
+    ]
+    return render(request,"product/index.html",context={"loyal":loyal})
 
 
 

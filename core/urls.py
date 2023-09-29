@@ -34,3 +34,5 @@ urlpatterns = [
 # views.py all the logical part is writtian inside this 
 # in any website login register page is called the functionality to pack this functinality in some module called app 
 # project ke module ko divide krte hin us cheez ko app kehte hin  
+
+# to send the data form the backend we use context and in frontedn we use {{name_of_context}}

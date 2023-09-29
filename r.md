@@ -14,9 +14,11 @@ how to start with the html response in django that  we know it should be done in
 how to return the data from backend 
   
 
-there are two types of view one is class based and another one function based view 
+there are two types of view one is class based and another one function based view
 
 frontend file that is html file should be inside the templates 
 - check the spelling of templates and put all ur frontend file insde this 
 
 js file should be  writtain with the html file 
+    
+    to send the data from backend to template we use context 
