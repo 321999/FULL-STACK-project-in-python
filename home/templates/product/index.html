@@ -31,12 +31,21 @@
                 <!-- <td>{{p.age}}</td>
                  -->
                 <td>{{p.AGE}}</td>
-                <td>{% if p.AGE >= 18 %}
-                    ✔
-                    {% else %}
-                    👏18 ke ho jao
-                {% endif %}
-                </td>
+         
+                    
+                    <!-- <td style="{% if p.AGE > 18 %} background-color: green; {% elif p.AGE == 18 %} background-color: yellowgreen; {% else %} background-color: red; {% endif %}"> -->
+                        
+                    <td {% if p.AGE > 18 %} style="background-color:green;" {% elif p.AGE == 18 %} style="background-color:blue;" {% else %} style="background-color:red;" {% endif %}>
+                        {% if p.AGE > 18 %}
+                            ✔
+                        {% elif p.AGE == 18 %}
+                            🤣aane vaale election medena
+                        {% else %}
+                            👏18 ke ho jao
+                        {% endif %}
+                    </td>
+                    
+                    
 
 
             </tr>

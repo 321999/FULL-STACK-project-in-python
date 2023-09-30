@@ -15,7 +15,7 @@ def blog(request):
 def samaan(request):
     loyal=[
         {"NAME":"KISHRE","AGE":23},
-        {"NAME":"KIE","AGE":23},
+        {"NAME":"KIE","AGE":18},
         {"NAME":"ISHRE","AGE":23},
         {"NAME":"KIS","AGE":16},
         {"NAME":"KISH","AGE":23},
