@@ -11,6 +11,8 @@
 <body>
     <h1>data from the backend is </h1>
     <strong>{{loyal}}</strong>
+
+    <strong> {{ text|truncatechars:28 }}</strong>
     <section>
         <table border="1"  class="table table-dark">
             <tr>
@@ -22,11 +24,14 @@
             </tr>
             {%for p in loyal%}
             <tr>
+                <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ut debitis culpa explicabo tempore totam, aliquid earum porro dolorum repellat nemo, dolorem necessitatibus, quas ducimus! Saepe amet dicta quasi molestias maxime, odio deserunt itaque quae, eius, veniam sit natus repellat dolor dolore. Cumque veniam vel corporis voluptatibus enim mollitia harum, quam tenetur, totam fugit rerum sit ab autem voluptatum in aliquam dolore minima veritatis aut nobis, voluptas repellendus dolorum. Vitae eveniet quam numquam. Nobis voluptatum reiciendis sunt distinctio. Aliquam qui obcaecati impedit ea rerum a expedita error quibusdam vitae beatae. Laudantium debitis dolore facilis vitae porro nesciunt expedita voluptate dignissimos ipsam incidunt, omnis possimus, maiores eius! Mollitia officia ipsum facere ab magni. Possimus nostrum odit vero qui. Ex aspernatur recusandae nam distinctio commodi, expedita sequi natus tenetur blanditiis ut architecto. Aliquid aut illum, sit temporibus eum saepe nostrum explicabo soluta! Fugit ipsam nemo repellendus at accusantium earum expedita maiores, eligendi officia dolor, eius soluta cum quasi voluptatibus totam sit recusandae id error rem. Voluptatum in tempora ab facere cupiditate quae cumque laborum iusto voluptatibus tenetur culpa impedit placeat recusandae sapiente saepe commodi eius inventore sed perspiciatis animi, velit asperiores deleniti quis. Sint impedit quia exercitationem neque debitis provident cupiditate quas. -->
                 <!-- <td></td> -->
                 <!-- <td>1</td> instead of doing this we can dynamically couner the value -->
                 <td>{{forloop.counter}}</td>
                 <!-- for loop counter is used to dynamically change the value -->
-                <td>{{p.NAME}}</td>
+                <td>{{p.NAME}} 
+                    <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium temporibus distinctio eius, alias vel eveniet eum velit quibusdam debitis incidunt, consectetur sint optio molestiae libero? Ipsum ad iusto officia soluta recusandae, molestiae esse! Tempora ipsam voluptatibus deserunt optio aperiam quos unde praesentium dolorum repudiandae ipsa repellendus nisi fugit, deleniti quis minus ad nostrum! Voluptas id aperiam adipisci eaque ipsam ducimus earum! Quas maiores unde doloremque quia expedita explicabo ab labore, aliquid quaerat natus odit deserunt corrupti molestiae facilis tenetur rerum velit sunt quisquam? Repellat, vel expedita, iure doloribus corrupti distinctio magni odit esse voluptate rem dicta, dolores molestiae suscipit cum! -->
+                </td>
                 <!-- <td>3</td> -->
                 <!-- <td>{{p.age}}</td>
                  -->

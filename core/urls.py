@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from home.views import *
 urlpatterns = [
+    path("contact/",contact,name="contact"),
+    path("about/",about,name="about"),
+    path("index/",samaan,name="samaan"),
     path("sucess/",sucess,name="sucess"),
     path("ki/raam/h",helo,name="helo"),
     path("blog/",blog,name="blog"),
