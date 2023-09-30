@@ -2,7 +2,15 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 def helo(request):
-    return HttpResponse("welcome <em>to ur</em> home <e>page</e>")
+    AVAILABLE_PRODUCT=[
+        {"name":"trimmer","price":420,"desc":"this trimmer cut your hair from zero","rating":1},
+        {"name":"kainchi","price":40,"desc":"this trimmer cut your hair from zero","rating":2},
+        {"name":"blade","price":4,"desc":"this trimmer cut your hair from zero","rating":4},
+        {"name":"astura","price":180,"desc":"this trimmer cut your hair from zero","rating":5}
+    ]
+    return render(request,"home/index.html",context={"AVAILABLE_PRODUCT":AVAILABLE_PRODUCT})
+    # return HttpResponse("welcome <em>to ur</em> home <e>page</e>")
+
 
 def sucess(request):
     print("sucess route running"+"*"*10)

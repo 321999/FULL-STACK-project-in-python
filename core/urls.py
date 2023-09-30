@@ -26,7 +26,7 @@ urlpatterns = [
     path("product/",samaan,name="samaan")
 ]
 
-
+ 
 # init file is used to delete the file 
 # admin file is used to modify the model 
 # models.py is used to interact with t eh database 
