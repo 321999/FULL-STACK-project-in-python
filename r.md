@@ -22,3 +22,39 @@ frontend file that is html file should be inside the templates
 js file should be  writtain with the html file 
     
     to send the data from backend to template we use context 
+
+
+    ```
+           {%for p in loyal%}
+            <tr>
+                <!-- <td></td> -->
+                <!-- <td>1</td> instead of doing this we can dynamically couner the value -->
+                <td>{{forloop.counter}}</td>
+                <!-- for loop counter is used to dynamically change the value -->
+                <td>{{p.NAME}}</td>
+                <!-- <td>3</td> -->
+                <!-- <td>{{p.age}}</td>
+                 -->
+                <td>{{p.AGE}}</td>
+
+
+            </tr>
+            {% endfor %}
+    ```
+    THis behave like for loop which is writin inside %%  and ended with the for end  and we can see teh logic writain with the name p 
+
+    when u dont reuere the thing dont comment it just delete it 
+    ```
+           <!-- <td {% if p.AGE>18 %} style="background-color:green" {% elif p.AGE == 18 %} style="background-color:greenyellow" {% else %} style:"background-color:red">{% if p.AGE > 18 %}                   ✔ -->
+    ```
+
+
+    in oop we should notrepeate the same code again and again
+this results redundant nature  this concept  is called DRY means do not reapte urself 
+     
+     for this wecan use block tag of django 
+    
+{% extends "product/base.html" %}
+#### TemplateDoesNotExist at /about/
+
+![Alt text](image.png)
