@@ -80,7 +80,21 @@ document.querySelector(".buy-button").addEventListener("click",()=>{
     alert("u have buyed the product")
 })
     </script>
+    Hello, <script>alert('have u login')</script>
 
+
+    <h1>list value is {{name|lower|upper|escape}}</h1>
+    <h1>list value is {{name|join:","}}</h1>
+    <h1>list value is {{name|lower|upper|escape}}</h1>
+    <h1>list value is {{name|join:","|filesizeformat}}</h1>
+    <h1>filesizeformat: {{filesize|filesizeformat}}</h1>
+    <h1>filesizeformat t          that is : {{filesize|safe}}</h1>
+
+thsi will be escaped to &lt;b&gt;
+
+    <!-- Hello, <script>alert('have u login')</script> -->
 {% endblock %}
+<!-- Hello, <script>alert('have u login')</script> -->
+
 </body>
 </html>
