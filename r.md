@@ -58,3 +58,15 @@ this results redundant nature  this concept  is called DRY means do not reapte u
 #### TemplateDoesNotExist at /about/
 
 ![Alt text](image.png)
+
+context={'title':'contact'}  it should be in single quote 
+
+whatever writtain above the <% block block_name %> is copied and accessible everywhere 
+
+<% blockend %> 
+code writtain below this is also accessible everywhere     
+
+and code writtain inside the block tag cannot be accessible everywhere 
+
+
+#### models and migration
