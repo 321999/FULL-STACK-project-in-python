@@ -24,3 +24,11 @@ class User(models.Model):
     email=models.EmailField(null=True,blank=True)
     age=models.IntegerField()
     address=models.TextField(null=True,blank=True)
+
+class Car(models.Model):
+    car_name=models.CharField(max_length=50)
+    speed=models.IntegerField(default=50)
+
+# when we fetch all the things that time only the class name not the data is coming but knowonwards it class with car name will be prited 
+    def __str__(self) -> str:
+        return self.car_name
