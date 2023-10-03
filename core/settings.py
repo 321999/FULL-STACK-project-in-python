@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # all external app like the name of app u put it should come here
 ]
-external_app=["accounts","home"]
+external_app=["accounts","home","vegetable"]
 INSTALLED_APPS+=external_app
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
