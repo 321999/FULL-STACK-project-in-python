@@ -240,4 +240,9 @@ to delete all the record we use
 Car.objects.all().delete() 
 it will  delete allur record 
 
-
+to create the new migrations 
+enter teh command 
+```
+python manage.py makemigrations
+```
+##### but before creting hte migrations makesure the app name should be there in project ka main folder ke settting.py ke installed app ke andar

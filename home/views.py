@@ -8,7 +8,9 @@ def helo(request):
         {"name":"blade","price":4,"desc":"this trimmer cut your hair from zero","rating":4},
         {"name":"astura","price":180,"desc":"this trimmer cut your hair from zero","rating":5}
     ]
-    return render(request,"home/index.html",context={"AVAILABLE_PRODUCT":AVAILABLE_PRODUCT})
+    # return render(request,"home/index.html",context={"AVAILABLE_PRODUCT":AVAILABLE_PRODUCT})
+    return render(request,"home/login.html")
+
     # return HttpResponse("welcome <em>to ur</em> home <e>page</e>")
 
 

@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import *
+from vegetable.views import *
 urlpatterns = [
+    path("recipe/",recipe,name="recipe"),
     path("contact/",contact,name="contact"),
     path("about/",about,name="about"),
     path("index/",samaan,name="samaan"),
