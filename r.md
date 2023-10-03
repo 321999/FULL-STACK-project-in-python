@@ -140,3 +140,104 @@ to work with the shell u have to enter the command
 ```
 python manage.py shell 
 ```
+In models.py there are two shemas one is student and another one is the Product 
+
+
+ # image=models.ImageField(null=True)
+    # file=models.FileField()
+we can insert the data into database using two ways one is 
+using the name of the model direcly pass the value 
+```
+In [1]: from home.models import *
+
+In [2]: st=User(name="kjlk",email="s@gmail.com",age=23,address="lkjflaskdjf",)
+
+In [3]: st
+Out[3]: <User: User object (None)>
+
+In [4]: st.save()
+
+In [5]: st
+Out[5]: <User: User object (1)>
+```
+
+or second one is by usng the object which is also called the model manager 
+```
+ user=User.objects.create(name="lksjd",email="K@gmail.com",age=23,address="kjfaksjdhf kasjhdfkajsh")
+
+In [7]: user
+Out[7]: <User: User object (2)>
+
+```
+in this u dont have to enter the save command 
+
+
+to run any file directly which is the part of django project it is not possible 
+but we can do this in django shell 
+    to open the django shell  python manage.py shell 
+    in that shell first import the file and just write the function name  to  execute 
+
+crud operation 
+
+## CREATE
+we can inset the data using 
+ car_obj={"car_name":"nexon","speed":90}
+asteric Car.objects.create(**car_obj)
+
+
+ car_obj={"car_name":"nexon","speed":90}
+
+  c=Car.objects.create(car_name="ghoraGari",speed=10)
+
+c=Car(car_name="bmw",speed=80)
+In [8]: c
+
+### RETRIEVE 
+CAR.OBJECTS.ALL()
+
+ for  i in range(2):
+    ...:     print(f"name of the car is :{Car.objects.all()[i].car_name} and the id is :{Car.objects
+    ...: .all()[i].id} and their speed is:{Car.objects.all()[i].speed}"
+    ...: 
+    ...:     )
+    ...: 
+name of the car is :bmw and the id is :1 and their speed is:80
+name of the car is :ghoraGari and the id is :2 and their speed is:10
+
+Car.objects.get(id=1)
+Out[24]: <Car: Car object (1)>
+
+get method is used to fetch the details 
+
+filter is used when u dont have the data basically when u are not source that the data is there that time u got with the filter it will return the empty array if it doesnot got the data
+### update
+ Car.objects.filter(id=1).update(car_name="using filter")
+Out[13]: 1
+
+In [14]: Car.objects.filter(id=2).update(car_name="using update")
+Out[14]: 1
+
+In [15]: Car.objects.all()
+Out[15]: <QuerySet [<Car: using filter>, <Car: using update>, <Car: nexon>]>
+
+
+In [3]: c=Car.objects.get(id=1)
+
+In [4]: c
+Out[4]: <Car: bmw>
+
+In [5]: c.car_name="khudka kagadi"
+
+In [6]: c
+Out[6]: <Car: khudka kagadi>
+
+## Delete
+delete
+do not perform delete operation on any stage because on production nothing to be deleted 
+c=Car.objects.get(id=1).delete()
+
+to delete all the record we use 
+Car.objects.all().delete() 
+it will  delete allur record 
+
+
