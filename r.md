@@ -246,3 +246,11 @@ enter teh command
 python manage.py makemigrations
 ```
 ##### but before creting hte migrations makesure the app name should be there in project ka main folder ke settting.py ke installed app ke andar
+
+after logging if u want to go to next page u should enter be aware of e.preventdefault()
+and 
+* location.href="src_next_page_link" 
+
+
+## while extending the base.html make sure where or in 
+which app it is present and target that file by giving back slash 
