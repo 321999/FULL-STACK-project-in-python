@@ -254,3 +254,27 @@ and
 
 ## while extending the base.html make sure where or in 
 which app it is present and target that file by giving back slash 
+
+## to send the data from frontend to backend we use post method 
+
+
+if u want to upload the image u need to type enctyp as multipart/form-data in form tag like 
+```
+    <form class="container mx-auto card" method="post" enctype="multipart/form-data">
+
+```
+if u dont use this u are not able to upload the image all the text field will be uploaded except the image field 
+
+```
+from django.shortcuts import render
+from django.http import HttpRequest
+# Create your views here.
+def recipe(request):
+    if request.method=="POST":
+        data = request.POST
+        # print(f"recipe name is {data['name']}")
+        print(f"recipe name is {data.get('name')}")
+
+
+    return render(request,"recipe.html",context={"title":"recipe"})
+```
