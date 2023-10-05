@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.password-input {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+}
+/* input[type="password"] {
+    width: 30px;
+    </img>height: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 5px;
+} */
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+div{
+    border-radius: 5px;
+}
+    </style>
+
+
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="password-input">
+                <!-- Create 16 input fields for the password -->
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220" style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(1)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220" style="width: 60px; height:80px;"alt="d" onclick="imageClicked(2)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(3)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(4)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(5)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(6)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(7)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;"alt="d" onclick="imageClicked(8)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220" style="width: 60px; height: 80px;"alt="d" onclick="imageClicked(9)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(1)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(2)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(3)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220" style="width: 60px; height: 80px;"alt="d" onclick="imageClicked(4)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220" style="width: 60px; height: 80px;"alt="d" onclick="imageClicked(5)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(6)"></div>
+                <div><img src="https://tse1.mm.bing.net/th?id=OIP.aDC4P1JBAVtru7oKTXWlEQHaJv&pid=Api&P=0&h=220"style="width: 60px; height: 80px;" alt="d" onclick="imageClicked(7)"></div>
+                <!-- Add more input fields as needed -->
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        // password=[9,6,1,9,4,7,2,4,1,0]
+        password=[1,2,3]
+
+       const l=[]
+        function imageClicked(number){
+                    l.push(number)
+        }
+
+        document.getElementById('login-form').addEventListener("submit",(e)=>{
+            e.preventDefault()
+        var a=true
+        for (i in password){
+            if (password[i]!=l[i]){
+                a=false;
+                break;
+            }
+        }
+
+        if (a){
+            location.href="/index";
+        }
+        else{
+            alert("u entered wrong password")
+        }
+        })
+
+
+//         console.log(l)
+//         document.addEventListener('DOMContentLoaded', function () {
+//     const passwordInputs = document.querySelectorAll('input[type="password"]');
+//     const loginForm = document.getElementById('login-form');
+
+//     loginForm.addEventListener('submit', function (e) {
+//         e.preventDefault();
+        
+//         // Collect the characters from the input fields
+//         let password = '';
+//         passwordInputs.forEach(input => {
+//             password += input.value;
+//         });
+
+//         // Check the password (replace with your validation logic)
+//         if (password === 'yourpassword') {
+//             alert('Login successful!');
+//             // Redirect to another page or perform further actions
+//         } else {
+//             alert('Login failed. Please try again.');
+//             // Clear the input fields or handle incorrect password
+//         }
+//     });
+// });
+
+    </script>
+</body>
+</html>
