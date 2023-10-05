@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpRequest
 # Create your views here.
 def recipe(request):
-    data = request.POST
-    print(data)
+    if request.method=="POST":
+        data = request.POST
+        print(f"recipe name is {data['name']}")
+
     return render(request,"recipe.html",context={"title":"recipe"})
