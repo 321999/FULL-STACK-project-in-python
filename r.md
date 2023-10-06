@@ -239,6 +239,11 @@ c=Car.objects.get(id=1).delete()
 to delete all the record we use 
 Car.objects.all().delete() 
 it will  delete allur record 
+```
+Recipe.objects.filter(id__in=[6,7,8,9]).delete()
+Out[12]: (4, {'vegetable.Recipe': 4})
+
+```
 
 to create the new migrations 
 enter teh command 
@@ -278,3 +283,16 @@ def recipe(request):
 
     return render(request,"recipe.html",context={"title":"recipe"})
 ```
+for textual data we have post  method 
+request.post  but to recieve the file we have to use 
+request.FILES['receipe_image']
+
+```
+reciptImage=request.FILES.get('iamge')
+```
+how to store the image in db or print in the console and how to send theimage from  frontend and  store it in dbs 
+
+
+to save the models in the database we use 
+
+with the help of context we can send data from backend to fronend 
