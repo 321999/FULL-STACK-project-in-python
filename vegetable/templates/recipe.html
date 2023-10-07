@@ -44,6 +44,8 @@
             <th scope="col">Description</th>
             <th scope="col">Image</th>
             <th scope="col">review</th>
+            <th scope="col">Delete</th>
+
 
         </tr>
     </thead>
@@ -58,6 +60,10 @@
               <!-- http://127.0.0.1:8000/media/recipe/193-866x9562.jp  actually we have to print this  -->
               <img style="height: 200px;" src="/media/{{i.iamge}}"/></td>
             <td>{{i.review}}</td>
+            <td>
+              <a href="/delete-recipe/{{i.id}}/">delete</a>
+            </td>
+
 
         </tr>
         {% endfor %}

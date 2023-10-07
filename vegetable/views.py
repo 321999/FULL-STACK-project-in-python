@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.http import HttpRequest
+from django.http import HttpRequest,HttpResponse
 from .models import *
 # Create your views here.
 def recipe(request):
@@ -30,3 +30,9 @@ def recipe(request):
     # return render(request,"Intableformat.html",context={"title":"recipe","dbdata":Recipe.objects.all()[0].name+Recipe.objects.all()[1].name})
     return render(request,"recipe.html",context={"title":"recipe","dbdata":Recipe.objects.all()})
     # return render(request,"Intableformat.html",context={"title":"recipe","dbdata":Recipe.objects.all()})
+def delete_recipe(request,id):
+    querytodelete=Recipe.objects.get(id=id)
+    querytodelete.delete()
+    return redirect("/recipe/")
+    # print(id)
+    # return HttpResponse("sleep")

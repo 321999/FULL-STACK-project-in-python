@@ -25,6 +25,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path("delete-recipe/<id>/",delete_recipe,name="delete_recipe"),
     path("recipe/",recipe,name="recipe"),
     path("contact/",contact,name="contact"),
     path("about/",about,name="about"),
