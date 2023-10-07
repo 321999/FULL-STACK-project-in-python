@@ -3,7 +3,7 @@
 <h1></h1>
 
 
-<div style="background-color: black;" class="container mt-5 card p-3">
+<div  class="container mt-5 card p-3">
 
     <form class="container mx-auto card" method="post" enctype="multipart/form-data">
       {% csrf_token %}
@@ -31,6 +31,41 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+
+      <div>
+
+        
+<H1>{{dbdata}} </H1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Srno</th>
+            <th scope="col">Recipe Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image</th>
+            <th scope="col">review</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in dbdata %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.name}}</td>
+            <td>{{i.ingredient}}</td>
+            <td>
+              {{i.iamge}}
+              <!-- http://127.0.0.1:8000/media/recipe/193-866x9562.jp  actually we have to print this  -->
+              <img style="height: 200px;" src="/media/{{i.iamge}}"/></td>
+            <td>{{i.review}}</td>
+
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+      </div>
 
 </div>
 <h1>{{dbdata}}</h1>

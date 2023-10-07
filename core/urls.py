@@ -1,3 +1,4 @@
+
 """
 URL configuration for core project.
 
@@ -8,16 +9,21 @@ Function views
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
 Class-based views
-    1. Add an import:  from other_app.views import Home
+    1. Add an import:  from other_app.views import Home 
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))     
+"""      
+
+from django.contrib import admin 
 from django.urls import path
-from home.views import *
-from vegetable.views import *
+from core import settings  
+from home.views import *  
+from vegetable.views import * 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns 
+from django.conf.urls.static import static
+
 urlpatterns = [
     path("recipe/",recipe,name="recipe"),
     path("contact/",contact,name="contact"),
@@ -31,7 +37,11 @@ urlpatterns = [
     path("product/",samaan,name="samaan")
 ]
 
- 
+   
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+urlpatterns +=staticfiles_urlpatterns()
 # init file is used to delete the file 
 # admin file is used to modify the model 
 # models.py is used to interact with t eh database 

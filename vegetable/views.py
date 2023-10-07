@@ -27,6 +27,6 @@ def recipe(request):
         )
         # in our case automatically it is redirect but for safety put this 
         return redirect("/recipe/")
-
     # return render(request,"Intableformat.html",context={"title":"recipe","dbdata":Recipe.objects.all()[0].name+Recipe.objects.all()[1].name})
-    return render(request,"Intableformat.html",context={"title":"recipe","dbdata":Recipe.objects.all()})
+    return render(request,"recipe.html",context={"title":"recipe","dbdata":Recipe.objects.all()})
+    # return render(request,"Intableformat.html",context={"title":"recipe","dbdata":Recipe.objects.all()})
