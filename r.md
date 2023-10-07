@@ -296,3 +296,77 @@ how to store the image in db or print in the console and how to send theimage fr
 to save the models in the database we use 
 
 with the help of context we can send data from backend to fronend 
+
+
+when i wanted to show the images on web which is coming from backend or databases 
+for that i have to create the new folder called public and for this i have to insert some amount of line of code in settings.py 
+
+like STATIC_ROOT
+MEDIA_ROOT 
+static_url 
+media_url 
+
+```
+import os
+# STATIC_ROOT='staticfiles'
+STATIC_URL = '/static/'
+
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIR={
+    os.path.join(BASE_DIR,"public/static")
+}
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'public/static')
+MEDIA_URL='/media/'
+```
+after writing this line of code ull get an error for that u have tomake changes in url 
+
+add this url 
+```
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+urlpatterns +=staticfiles_urlpatterns()
+```
+and do not forger to imoprt the settings from ur project folder and static from 
+```
+from django.conf.urls.static import static
+```
+
+### sometime when u dont get the result after writing clear code just restart the code and this concept is called "murkhak laathi banjhe kapaar"
+
+like i did when i not get the image after creating all the public folder like public\static\recipe
+
+```
+http://127.0.0.1:8000/media/recipe/193-866x9562.jpg
+```
+when someone  move to  the media file django understand and it will sends the media file related context like image video and file like pdf an all 
+
+some important question related to this django 
+how  to send the data from backend to frontend 
+        to send the data from backend to frontend we use context and whatever we passed through context it can executabel in frontend 
+        this is in object format 
+        to use that in frontend we have to use that as  varibale using {{write the name of the key used in the context}}
+
+how to send the data from frontend to backend 
+    to send the data from  frontend to backend we use action in the from data and sepcially to send the image from frontend to backend we use enctype="mltipart/form-data"
+
+how to handle the dynamic route in django 
+    for that we have to use the two parameter in the django 
+
+```    
+def delete_recipe(request,id):
+    print(id)
+    return HttpResponse("sleep")
+```        
+in button 
+  <a href="/delete-recipe/{{i.id}}/">delete</a>
+  delete-recipe is the route where request and id will be returning the so that dynamic id is the 
+  key attribute 
+  logic for deleting the data from dbs are 
+  def delete_recipe(request,id):
+    a=Recipe.objects.get(id=id)
+    <!-- dbs automatically generate the id for each field -->
+    a.delete()
+    return redirect("/recipe/)
