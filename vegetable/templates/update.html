@@ -1,0 +1,75 @@
+{% extends "product/base.html" %}
+{% block base %}
+<h1>{{value.ingredient}}</h1>
+<P>{{DATA}}</P>
+
+<div  class="container mt-5 card p-3">
+
+    <form class="container mx-auto card" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h3>Add Recipe</h3>
+        <div class="form-group">                             
+          <label for="exampleInputEmail1">Recipe Name</label>
+          <input type="text" name="name" value="{{value.name}}" class="form-control"  placeholder="Enter name">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Description</label>
+          <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+        <textarea name="ingredient" class="form-control">{{value.ingredient}}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Recipe Image</label>
+            <input type="file" name="iamge" value="{{value.iamge}}" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+
+        <div class="form-group">
+          <input type="text" name="review" value="{{value.review}}" class="form-control" >
+          <label class="form-check-label" for="exampleCheck1">feel after eating this food</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+        <div>
+          <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Srno</th>
+                    <th scope="col">Recipe Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">review</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- {% for i in DATA %} -->
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{DATA.name}}</td>
+                    <td>{{DATA.ingredient}}</td>
+                    <td>
+                      {{DATA.iamge}}
+                      <!-- http://127.0.0.1:8000/media/recipe/193-866x9562.jp  actually we have to print this  -->
+                      <img style="height: 200px;" src="/media/{{i.iamge}}"/></td>
+                    <td>{{DATA.review}}</td>
+                    <td>
+                      <a href="/delete-recipe/{{i.id}}/">delete</a>
+                    </td>
+                    <td>
+                      <a href="/update-recipe/{{i.id}}/">update</a>
+                    </td>
+        
+        
+                </tr>
+                <!-- {% endfor %} -->
+        
+            </tbody>
+        </table>
+          </table>
+        </div>
+        {% endblock %}

@@ -7,7 +7,7 @@
 
     <form class="container mx-auto card" method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      <h3>Add Recipe</h3>
+      <h3>Update Recipe</h3>
         <div class="form-group">                             
           <label for="exampleInputEmail1">Recipe Name</label>
           <input type="text" name="name" class="form-control"  placeholder="Enter name">
@@ -31,11 +31,25 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <!-- search functionality -->
+<div class="form-group">
+  <div>
+    <form>
+   <label for="exampleInputPassword1">Search</label>
+   <input type="text" name="search" class="form-control" id="exampleInputPassword1" placeholder="enter the name of recipe u want"/>
+   <button type="submit" class="btn btn-primary">search</button>
+  </form>
+  </div>
+</div>
+
+</div>
 
       <div>
 
         
-<H1>{{dbdata}} </H1>
+<!-- <H1>{{dbdata}} </H1> -->
+
+
 <table class="table">
     <thead>
         <tr>
@@ -45,6 +59,8 @@
             <th scope="col">Image</th>
             <th scope="col">review</th>
             <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+
 
 
         </tr>
@@ -62,6 +78,9 @@
             <td>{{i.review}}</td>
             <td>
               <a href="/delete-recipe/{{i.id}}/">delete</a>
+            </td>
+            <td>
+              <a href="/update-recipe/{{i.id}}/">update</a>
             </td>
 
 
