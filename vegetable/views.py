@@ -32,9 +32,14 @@ def recipe(request):
     AllQuery=Recipe.objects.all()
     # code for searching
     if request.GET.get("search"):
-        AllQuery=AllQuery.filter(name__icontains = request.GET.get("search"))
+        AllQuery=AllQuery.filter(name__icontains = request.GET.get("search")) 
+        # print("**********"*5+str(type(AllQuery))) 
+        print("length of the query is",len(AllQuery))  
+        
+              
         # return AllQuery
         # print(request.GET.get("search"))
+
 
 
 

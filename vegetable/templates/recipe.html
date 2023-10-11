@@ -38,8 +38,16 @@
    <label for="exampleInputPassword1">Search</label>
    <input type="text" name="search" class="form-control" id="exampleInputPassword1" placeholder="enter the name of recipe u want"/>
    <button type="submit" class="btn btn-primary">search</button>
-  </form>
+   </form>
   </div>
+</div>
+<div>
+ <h1>length of the querey is  {{dbdata|length}} </h1>
+ <p>
+  {% if dbdata|length == 0 %}
+  <script>alert("try something new recipe ")</script>
+  {% endif %}
+ </p>
 </div>
 
 </div>
