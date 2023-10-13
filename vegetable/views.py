@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest,HttpResponse
 from .models import *
+# for authenticateion 
+from django.contrib.auth.models import User 
+from django.contrib import messages
 # Create your views here.
 def recipe(request):
    
@@ -40,9 +43,6 @@ def recipe(request):
         # return AllQuery
         # print(request.GET.get("search"))
 
-
-
-
     # return render(request,"recipe.html",context={"title":"recipe","dbdata":Recipe.objects.all()})
     return render(request,"recipe.html",context={"title":"recipe","dbdata":AllQuery})
 
@@ -70,3 +70,30 @@ def update_recipe(request,id):
     # return HttpResponse(id)
     return render(request,"update.html",context={"value":ValaueToUpdate,"DATA":updateData})
     # Recipe.objects.get(id=id).update(name="kishore")
+def login(request):
+    messages.success(request, "loggin Successful")
+    return render(request,"login.html",context={"title":"login_page"})
+
+def register(request):
+    if request.POST:
+        FIRST_NAME=request.POST.get("First_Name")
+        Last_NAME=request.POST.get("last_Name")
+        USERNAME=request.POST.get("username")
+        PASSWORD=request.POST.get("password")
+        print(FIRST_NAME+Last_NAME+USERNAME+PASSWORD)
+        if User.objects.filter(username=USERNAME):
+            # its working fine but we have to add messages
+            messages.error(request, "Username already exist") 
+            return redirect("/register")
+        user=User.objects.create(first_name=FIRST_NAME,
+                             last_name=Last_NAME,
+                             username=USERNAME,
+                        #    password=PASSWORD
+                           )
+    # to store the password in encrypted manner
+        user.set_password(PASSWORD)
+        user.save()
+        messages.success(request, "Your Account is created") 
+        return redirect("/register")
+
+    return render(request,"register.html") 

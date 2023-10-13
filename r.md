@@ -236,12 +236,12 @@ delete
 do not perform delete operation on any stage because on production nothing to be deleted 
 c=Car.objects.get(id=1).delete()
 
-to delete all the record we use 
-Car.objects.all().delete() 
-it will  delete allur record 
+to delete all the record we use   
+Car.objects.all().delete()  
+it will  delete allur record  
 ```
-Recipe.objects.filter(id__in=[6,7,8,9]).delete()
-Out[12]: (4, {'vegetable.Recipe': 4})
+Recipe.objects.filter(id__in=[6,7,8,9]).delete()  
+Out[12]: (4, {'vegetable.Recipe': 4})  
 
 ```
 
@@ -370,3 +370,25 @@ in button
     <!-- dbs automatically generate the id for each field -->
     a.delete()
     return redirect("/recipe/)
+## u can access the object value ka value using the dot notaion but to acees the value from form use the get method 
+
+
+djnago handle most of things automatically such asi have wirttan the logic for accepting  teh user input such as name descsription photo and review but in that user have only passed their name and rest of the things empty and isave it so updated value should be empty na but it is not so djagno supports automatically handling 
+
+
+authentication and authorisationa 
+for  user authentication we are going to use predefine model from django.db.auth.moe
+from django.contrib.auth.models import User 
+
+## if u use the path like register/ it will open next to the current but when u use the /register 
+
+&lt;a href="register/"&gt;Create an account</a>
+when u click on it it will  open lik e
+```
+http://127.0.0.1:8000/register/
+```
+when u clck on it &lt;a href="register/">Create an account</a>
+it  willopen like 
+```
+http://127.0.0.1:8000/login/register/
+```

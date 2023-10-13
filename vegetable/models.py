@@ -1,8 +1,11 @@
 from django.db import models
+# for authentication  
+from  django.contrib.auth.models import User
 
 # Create your models here.
 
 class Recipe(models.Model):
+    user=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)
     name=models.CharField(max_length=50)
     ingredient=models.TextField()
     review=models.CharField(max_length=10)
