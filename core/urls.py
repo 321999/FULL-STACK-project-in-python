@@ -39,7 +39,7 @@ urlpatterns = [
     path("",helo,name="helo"),
     path('admin/', admin.site.urls),
     path("product/",samaan,name="samaan"),
-    path("logout/",logout,name="logout")
+    path("logout/",logoutuser,name="logout")
 ]
 
    

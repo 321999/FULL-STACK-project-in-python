@@ -4,7 +4,7 @@ from .models import *
 # for authenticatf ion 
 from django.contrib.auth.models import User 
 from django.contrib import messages
-from django.contrib.auth import authenticate , login
+from django.contrib.auth import authenticate , login , logout
 # Create your views here.
 def recipe(request):
                                                                                                                 
@@ -107,7 +107,8 @@ def loginPage(request):
         # # messages.success(request, "loggin Successful dfhgdfgdgdg")
         # # user=authenticate(username=username,password=request.POST.get("password"))
     return render(request,"login.html",context={"title":"login_page"})
-def logout(request):
+def logoutuser(request):
+    logout(request)
     return redirect("/login/")
     return render(request,"logout.html",context={"title":"logout"})
 
