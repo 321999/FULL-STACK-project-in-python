@@ -5,7 +5,12 @@ from .models import *
 from django.contrib.auth.models import User 
 from django.contrib import messages
 from django.contrib.auth import authenticate , login , logout
+# to access some page after login only we use decorators 
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+@login_required(login_url="/login/")
+# when u route on recipe it will say beta first login kr 
 def recipe(request):
                                                                                                                 
     if request.method=="POST":
@@ -107,6 +112,8 @@ def loginPage(request):
         # # messages.success(request, "loggin Successful dfhgdfgdgdg")
         # # user=authenticate(username=username,password=request.POST.get("password"))
     return render(request,"login.html",context={"title":"login_page"})
+
+@login_required()
 def logoutuser(request):
     logout(request)
     return redirect("/login/")
