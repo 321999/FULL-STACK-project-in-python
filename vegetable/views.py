@@ -1,12 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest,HttpResponse
 from .models import *
-# for authenticateion 
+# for authenticatf ion 
 from django.contrib.auth.models import User 
 from django.contrib import messages
+from django.contrib.auth import authenticate    
 # Create your views here.
 def recipe(request):
-   
+                                                                                                                
     if request.method=="POST":
         data = request.POST
         # files=request.Files[]
@@ -71,7 +72,25 @@ def update_recipe(request,id):
     return render(request,"update.html",context={"value":ValaueToUpdate,"DATA":updateData})
     # Recipe.objects.get(id=id).update(name="kishore")
 def login(request):
-    messages.success(request, "loggin Successful")
+    if request.POST:
+        USERNAME=request.POST.get("username")
+        pswd=request.POST.get("password")
+        print("password is "*8,pswd)
+        user=authenticate(username=USERNAME,password=pswd)
+        print("*"*18,user.password)
+        # if user:
+        #     messages.success(request,"loginsuccessful")
+        # else:
+        #     messages.success(request,"username doesnot exits ")
+
+
+        # if User.objects.filter(username=username).exists():
+        #     messages.warning(request,"user doesnot exist")
+        #     return render(request,"login.html",context={"title":"login_page"})
+        # else:
+        #     messages.warning(request,"loggin successful")
+        # # messages.success(request, "loggin Successful dfhgdfgdgdg")
+        # # user=authenticate(username=username,password=request.POST.get("password"))
     return render(request,"login.html",context={"title":"login_page"})
 
 def register(request):
@@ -83,7 +102,7 @@ def register(request):
         print(FIRST_NAME+Last_NAME+USERNAME+PASSWORD)
         if User.objects.filter(username=USERNAME):
             # its working fine but we have to add messages
-            messages.error(request, "Username already exist") 
+            messages.error(request, "Invalid credentials") 
             return redirect("/register")
         user=User.objects.create(first_name=FIRST_NAME,
                              last_name=Last_NAME,
@@ -95,5 +114,7 @@ def register(request):
         user.save()
         messages.success(request, "Your Account is created") 
         return redirect("/register")
-
     return render(request,"register.html") 
+
+
+

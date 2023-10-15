@@ -7,6 +7,17 @@
 
     <form class="container mx-auto card" method="post" enctype="multipart/form-data">
       {% csrf_token %}
+
+      {% if messages %}
+      <div class="alert alert-primary" role="alert">
+       {% for m in messages %}
+        <ul class="messages">
+         <li><h1> {{ m }}</h1></li>
+        </ul>
+        {% endfor %}
+      </div>
+      {% endif %}
+
       <h3>LOGIN</h3>
         <div class="form-group">   
           <label for="exampleInputEmail1">Username</label>
