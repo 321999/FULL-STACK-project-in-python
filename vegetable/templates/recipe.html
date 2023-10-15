@@ -4,6 +4,26 @@
 
 
 <div  class="container mt-5 card p-3">
+<!-- <h1>{{request.user}}</h1> -->
+<!-- only the username is coming -->
+<h1>{{request.user.password}}</h1>
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">{{request.user}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/logout/">logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
     <form class="container mx-auto card" method="post" enctype="multipart/form-data">
       {% csrf_token %}

@@ -390,5 +390,28 @@ http://127.0.0.1:8000/register/
 when u clck on it &lt;a href="register/">Create an account</a>
 it  willopen like 
 ```
-http://127.0.0.1:8000/login/register/
+http://127.0.0.1:8000/login/register/   
+
 ```
+
+for storing the password we have used sha algorithm to generate one time password 
+##django messages
+
+
+to see all the commit 
+![Alt text](image-1.png)
+
+click on commit u will see all changes 
+and  see accordingly whichever step u want to go 
+
+#  advance authentication 
+<!--  -->
+instead of exists we can use directly conditional statement 
+
+after one time login user shoul not  login again and again every page 
+so for that we have to maintian the session 
+and for session we use login which will maintian the session 
+![Alt text](image-2.png)
+
+#### to solve this error pass the the argument in login() as request and the name of the user
+* login(request,user)  

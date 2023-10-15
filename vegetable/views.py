@@ -4,7 +4,7 @@ from .models import *
 # for authenticatf ion 
 from django.contrib.auth.models import User 
 from django.contrib import messages
-from django.contrib.auth import authenticate    
+from django.contrib.auth import authenticate , login
 # Create your views here.
 def recipe(request):
                                                                                                                 
@@ -71,17 +71,32 @@ def update_recipe(request,id):
     # return HttpResponse(id)
     return render(request,"update.html",context={"value":ValaueToUpdate,"DATA":updateData})
     # Recipe.objects.get(id=id).update(name="kishore")
-def login(request):
-    if request.POST:
+def loginPage(request):
+    if request.method=="POST":
         USERNAME=request.POST.get("username")
         pswd=request.POST.get("password")
-        print("password is "*8,pswd)
+        print("password is"*8,pswd)
+
+        if not User.objects.filter(username=USERNAME).exists():
+            messages.warning(request,"username doesnot exist")
+            return redirect("/login/")
+        
         user=authenticate(username=USERNAME,password=pswd)
-        print("*"*18,user.password)
+        # print("*"*18,user.name)
+        if user is None:
+            messages.error(request,"password is  wrong")
+            return redirect("/login/")
+        else:
+            # if login cardential matches then keep that user using session 
+            login(request,user)#to keep the user in session we use login 
+            return redirect("/recipe/")
+
+
         # if user:
         #     messages.success(request,"loginsuccessful")
         # else:
         #     messages.success(request,"username doesnot exits ")
+    #  if we get the user cardential correct 
 
 
         # if User.objects.filter(username=username).exists():
@@ -92,6 +107,10 @@ def login(request):
         # # messages.success(request, "loggin Successful dfhgdfgdgdg")
         # # user=authenticate(username=username,password=request.POST.get("password"))
     return render(request,"login.html",context={"title":"login_page"})
+def logout(request):
+    return redirect("/login/")
+    return render(request,"logout.html",context={"title":"logout"})
+
 
 def register(request):
     if request.POST:

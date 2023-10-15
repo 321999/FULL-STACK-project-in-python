@@ -26,7 +26,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("register/",register,name="register"),
-    path("login/",login,name="login"),
+    path("login/",loginPage,name="login"),
     path("delete-recipe/<id>/",delete_recipe,name="delete_recipe"),
     path("update-recipe/<id>/",update_recipe,name="update-recipe"),
     path("recipe/",recipe,name="recipe"),
@@ -38,7 +38,8 @@ urlpatterns = [
     path("blog/",blog,name="blog"),
     path("",helo,name="helo"),
     path('admin/', admin.site.urls),
-    path("product/",samaan,name="samaan")
+    path("product/",samaan,name="samaan"),
+    path("logout/",logout,name="logout")
 ]
 
    
