@@ -112,13 +112,14 @@ class name_of_models(models.Model):
     .
     fieldn 
 
-```
+```        
 ##### migrations are the the process of managing changes to the database schema 
 if u alter the db schema u have to enter the command python manage.py makemigrations
 aftere this the new file is created with the dependency in it as app name and with the previous init file 
 
 to push this changes or save this data in to the db we have to enter the command 
-python manage.py migrate 
+python manage.py migrate  
+
 
 the important things in this is that dont delte the dependency even after saving the main file in db 
 in every theere is folder of migration which is used 
@@ -161,7 +162,7 @@ In [5]: st
 Out[5]: <User: User object (1)>
 ```
 
-or second one is by usng the object which is also called the model manager 
+or second one is by using the object which is also called the model manager 
 ```
  user=User.objects.create(name="lksjd",email="K@gmail.com",age=23,address="kjfaksjdhf kasjhdfkajsh")
 
@@ -415,3 +416,40 @@ and for session we use login which will maintian the session
 
 #### to solve this error pass the the argument in login() as request and the name of the user
 * login(request,user)  
+
+
+### ORM
+object relational model 
+  
+## n
+new field is created ,initially defautl value is set to 1 but later using random package we set the random value 
+```
+ for i in r:
+   ...:     i.recipe_counter=random.randint(10,100)
+   ...:     i.save()
+   ...: 
+```
+to access the value in decreasing order we can use - sign 
+```
+    r=Recipe.objects.all().order_by(-count_recipe)
+```
+the result what we get is an list format so we have can perform all the list  function on it
+most important that is slice 
+
+
+```
+ r.filter(recipe_counter=82)
+ we should not use double == othewise it will give u an error as 
+ recipe_counter is not defined 
+```
+# 
+* to get teh value in sorting order we use order by 
+```
+    r=Recipe.objects.all().order_by(-count_recipe)
+```
+Recipe.objects.filter(field_name= value)
+```
+Recipe.objects.filter(field_name__lte=value)
+Recipe.objects.filter(field_name__gte=value)
+
+```

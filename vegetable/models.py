@@ -10,6 +10,8 @@ class Recipe(models.Model):
     ingredient=models.TextField()
     review=models.CharField(max_length=10)
     iamge=models.ImageField(upload_to="recipe",null=True)
-
+# this is automatically called integerfield  
+    recipe_counter=models.IntegerField(default=1)
     def __str__(self) -> str:
         return self.name 
+
