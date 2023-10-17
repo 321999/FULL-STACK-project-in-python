@@ -453,3 +453,6 @@ Recipe.objects.filter(field_name__lte=value)
 Recipe.objects.filter(field_name__gte=value)
 
 ```
+
+## we can  perform the sql on django 
+model.objects.raw("write the sql statement")  
